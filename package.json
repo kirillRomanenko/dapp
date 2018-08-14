@@ -32,7 +32,7 @@
     "latest": "^0.2.0",
     "rxjs": "5.5.11",
     "sw-toolbox": "3.6.0",
-    "web3": "^1.0.0-beta.35",
+    "web3": "0.19.0",
     "zone.js": "0.8.26"
   },
   "devDependencies": {

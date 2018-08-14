@@ -13,13 +13,18 @@ export class Web3Provider {
 
   constructor() {
     console.log('Hello Web3Provider Provider');
-    if (typeof this.web3 !== 'undefined') {
-      this.web3 = new Web3(this.web3.currentProvider);
-    } else {
-      // set the provider you want from Web3.providers
-      this.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+
+    this.web3.setProvider(new Web3.providers.HttpProvider('http://localhost:8545'));
+
+    if(!this.web3.isConnected()) {
+      console.log("not connected");
     }
+    else {
+      console.log("connected");
+    }
+
     console.log(this.web3);
+   
   }
 
 }

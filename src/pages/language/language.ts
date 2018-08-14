@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import {TutorialPage} from '../tutorial/tutorial';
+
+import { Web3Provider } from '../../providers/web3/web3';
+
 /**
  * Generated class for the LanguagePage page.
  *
@@ -17,7 +20,7 @@ import {TutorialPage} from '../tutorial/tutorial';
 export class LanguagePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    public events: Events, private storage: Storage
+    public events: Events, private storage: Storage, public Web3: Web3Provider
   ) {
       this.storage.set('lang', 'en');
       this.refreshPageLanguage();
