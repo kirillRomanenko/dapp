@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
-//import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage';
 import {TutorialPage} from '../tutorial/tutorial';
 /**
  * Generated class for the LanguagePage page.
@@ -17,8 +17,9 @@ import {TutorialPage} from '../tutorial/tutorial';
 export class LanguagePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    public events: Events, //private storage: Storage
+    public events: Events, private storage: Storage
   ) {
+      this.storage.set('lang', 'en');
       this.refreshPageLanguage();
   }
 
@@ -38,7 +39,7 @@ export class LanguagePage {
   }
 
   setLanguage(lang) { 
-   // this.storage.set('lang', lang);
+    this.storage.set('lang', lang);
     console.log(lang);
   }
 
