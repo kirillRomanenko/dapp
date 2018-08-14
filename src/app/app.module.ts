@@ -6,8 +6,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { GlobalProvider } from '../providers/global/global';
-import { YourProvider } from '../providers/your/your';
+import { Web3Provider } from '../providers/web3/web3';
+import { AnimationProvider } from '../providers/animation/animation';
+import { LanguageProvider } from '../providers/language/language';
 
 @NgModule({
   declarations: [
@@ -27,8 +28,9 @@ import { YourProvider } from '../providers/your/your';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    GlobalProvider,
-    YourProvider
+    Web3Provider,
+    AnimationProvider,
+    LanguageProvider
   ]
 })
 export class AppModule {}
