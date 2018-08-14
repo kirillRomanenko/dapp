@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
+//import { Storage } from '@ionic/storage';
+import {TutorialPage} from '../tutorial/tutorial';
 /**
  * Generated class for the LanguagePage page.
  *
@@ -15,11 +16,30 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LanguagePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    public events: Events, //private storage: Storage
+  ) {
+      this.refreshPageLanguage();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LanguagePage');
+  }
+
+  refreshPageLanguage() {
+    this.events.subscribe('reloadLanguage',() => {
+      // this.navCtrl.pop();
+      this.navCtrl.setRoot(LanguagePage);
+     });
+  }
+
+  openTutorial(){
+    this.navCtrl.push(TutorialPage);
+  }
+
+  setLanguage(lang) { 
+   // this.storage.set('lang', lang);
+    console.log(lang);
   }
 
 }

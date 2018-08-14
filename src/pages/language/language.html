@@ -5,14 +5,32 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>language</ion-title>
-  </ion-navbar>
-
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content no-padding>
+    <div class="general-field">
+        <ion-grid no-padding>
+            <ion-row class="select-language">
+                <ion-col class="col-xs-6">
+                    <button type="button" class="btn" (click)="setLanguage('ru')">руcский</button>
+                </ion-col>
+                <ion-col class="col-xs-6">
+                    <button type="button" class="btn" (click)="setLanguage('en')">english</button>
+                </ion-col>
+            </ion-row>
+            <ion-row class="btn-next" align="center">
+                <ion-col class="col-md-4">
+                    <button type="button" class="btn" (click)="openTutorial()">next</button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+    <div class="header-field">
+        <div class="caption">
+            <label for="" align="center">Language Selection</label>
+        </div>
+        <p>
+            Welcome! Please make a choice <br/> of language.
+        </p>
+    </div>
 </ion-content>

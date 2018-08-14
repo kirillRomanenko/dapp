@@ -5,7 +5,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
+import { LanguagePage } from '../pages/language/language';
+import { LoginPage } from '../pages/login/login';
+import { PinPage } from '../pages/pin/pin';
+import { PinconfirmPage } from '../pages/pinconfirm/pinconfirm';
+import { RegPage } from '../pages/reg/reg';
+import { SendPage } from '../pages/send/send';
 import { HomePage } from '../pages/home/home';
+import { TutorialPage } from '../pages/tutorial/tutorial';
+
 import { Web3Provider } from '../providers/web3/web3';
 import { AnimationProvider } from '../providers/animation/animation';
 import { LanguageProvider } from '../providers/language/language';
@@ -13,7 +21,14 @@ import { LanguageProvider } from '../providers/language/language';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    LanguagePage,
+    LoginPage,
+    PinPage,
+    PinconfirmPage,
+    RegPage,
+    SendPage,
+    TutorialPage
   ],
   imports: [
     BrowserModule,
@@ -22,7 +37,14 @@ import { LanguageProvider } from '../providers/language/language';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    LanguagePage,
+    LoginPage,
+    PinPage,
+    PinconfirmPage,
+    RegPage,
+    SendPage,
+    TutorialPage
   ],
   providers: [
     StatusBar,
