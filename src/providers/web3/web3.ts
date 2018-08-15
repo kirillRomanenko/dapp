@@ -29,7 +29,10 @@ export class Web3Provider {
     console.log('account:', this.web3.eth.coinbase);
     let initialBalance = this.web3.eth.getBalance(this.web3.eth.coinbase);
     console.log('Balance:', initialBalance);
+
+ 
    
   }
+  
 
 }
