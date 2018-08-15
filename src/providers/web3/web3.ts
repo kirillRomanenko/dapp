@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import Web3 from 'web3';
+
 /*
   Generated class for the Web3Provider provider.
 
@@ -24,6 +25,10 @@ export class Web3Provider {
     }
 
     console.log(this.web3);
+    
+    console.log('account:', this.web3.eth.coinbase);
+    let initialBalance = this.web3.eth.getBalance(this.web3.eth.coinbase);
+    console.log('Balance:', initialBalance);
    
   }
 
