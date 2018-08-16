@@ -46,34 +46,34 @@ export class LanguagePage {
     
     console.log('account:', this.web3.eth.coinbase);
     let initialBalance = this.web3.eth.getBalance(this.web3.eth.coinbase);
-    console.log('Balance:', initialBalance);
+    console.log('Balance:', this.web3.fromWei(initialBalance.toNumber()));
     console.log('BALANCE CONTRACT:',this.checkBalances('0x05075fDE6AA5913E5AEd5A28688a33e53C75Eb3d'));
   }
 
 
 
      // Баланс контракта
-    padTokens(s, n) {
-      let o = s.toPrecision(n);
-      while (o.length < n) {
-        o = " " + o;
-      }
-      return o;
-    }
+    // padTokens(s, n) {
+    //   let o = s.toPrecision(n);
+    //   while (o.length < n) {
+    //     o = " " + o;
+    //   }
+    //   return o;
+    // }
 
     checkBalances(GZBAddress) {
-      var GZBABI = [ { "constant": true, "inputs": [], "name": "name", "outputs": [ { "name": "", "type": "string", "value": "GAZPROMBANK" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "decimals", "outputs": [ { "name": "", "type": "uint8", "value": "8" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "", "type": "address" } ], "name": "balanceOf", "outputs": [ { "name": "", "type": "uint256", "value": "0" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "symbol", "outputs": [ { "name": "", "type": "string", "value": "GZB" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "_to", "type": "address" }, { "name": "_value", "type": "uint256" } ], "name": "transfer", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "inputs": [], "payable": false, "stateMutability": "nonpayable", "type": "constructor" } ];
+      let GZBABI = [ { "constant": true, "inputs": [], "name": "name", "outputs": [ { "name": "", "type": "string", "value": "GAZPROMBANK" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "decimals", "outputs": [ { "name": "", "type": "uint8", "value": "8" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "", "type": "address" } ], "name": "balanceOf", "outputs": [ { "name": "", "type": "uint256", "value": "0" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "symbol", "outputs": [ { "name": "", "type": "string", "value": "GZB" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "_to", "type": "address" }, { "name": "_value", "type": "uint256" } ], "name": "transfer", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "inputs": [], "payable": false, "stateMutability": "nonpayable", "type": "constructor" } ];
       
-      var SmartGZBAddress = "0xEb1C8B51D677DB69319e15237c959B0603B74697"; // адрес контракта!!
-      var FXN = this.web3.eth.contract(GZBABI).at(SmartGZBAddress);
+      let SmartGZBAddress = "0xEb1C8B51D677DB69319e15237c959B0603B74697"; // адрес контракта!!
+      let FXN = this.web3.eth.contract(GZBABI).at(SmartGZBAddress);
     
       //  var tokens = FXN.balanceOf(FXNAddress) / parseFloat(1e16);
       // var tokens = FXN.balanceOf(GZBAddress) / parseFloat(1e2);
-      var tokens = FXN.balanceOf('0x05075fDE6AA5913E5AEd5A28688a33e53C75Eb3d');
-      // let tokensString = parseInt(tokens,10);
+      let tokens = FXN.balanceOf('0x05075fDE6AA5913E5AEd5A28688a33e53C75Eb3d')/Math.pow(10,8);
       
     
-        return this.padTokens(tokens, 1);
+        // return this.padTokens(tokens, 1);
+        return tokens;
     
     };
     
