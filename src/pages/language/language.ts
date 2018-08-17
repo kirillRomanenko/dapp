@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import {TutorialPage} from '../tutorial/tutorial';
+import {fs} from 'file-system';
+import {solc} from 'solc';
 
 //import { Web3Provider } from '../../providers/web3/web3';
 
@@ -69,13 +71,47 @@ export class LanguagePage {
     
       //  var tokens = FXN.balanceOf(FXNAddress) / parseFloat(1e16);
       // var tokens = FXN.balanceOf(GZBAddress) / parseFloat(1e2);
-      let tokens = FXN.balanceOf('0x05075fDE6AA5913E5AEd5A28688a33e53C75Eb3d')/Math.pow(10,8);
+      let tokens = FXN.balanceOf('0x05075fDE6AA5913E5AEd5A28688a33e53C75Eb3d')/Math.pow(10,0);
       
     
         // return this.padTokens(tokens, 1);
         return tokens;
     
     };
+
+    createContract() {
+      //компилирование контракта из файла
+      const input = fs.readFileSync('Token.sol');
+      const output = solc.compile(input.toString(), 1);
+      const bytecode = output.contracts['Token'].bytecode;
+      const abi = JSON.parse(output.contracts['Token'].interface);
+
+      // Contract object
+      const contract = this.web3.eth.contract(abi);
+
+      // Deploy contract instance
+const contractInstance = contract.new({
+    data: '0x' + bytecode,
+    from: this.web3.eth.coinbase,
+    gas: 90000*2
+  }, (err, res) => {
+  if (err) {
+      console.log(err);
+      return;
+  }
+
+  // Log the tx, you can explore status with eth.getTransaction()
+  console.log(res.transactionHash);
+
+  // If we have an address property, the contract was deployed
+  if (res.address) {
+      console.log('Contract address: ' + res.address);
+      // Let's test the deployed contract
+      // testContract(res.address);  //временно закоментил, т.к. не доделал
+  }
+});
+
+    }
     
 
 
