@@ -5,6 +5,8 @@ import {TutorialPage} from '../tutorial/tutorial';
 import {fs} from 'file-system';
 import {solc} from 'solc';
 
+import * as $ from 'jquery';
+
 //import { Web3Provider } from '../../providers/web3/web3';
 
 import Web3 from 'web3';
@@ -49,7 +51,7 @@ export class LanguagePage {
     console.log('account:', this.web3.eth.coinbase);
     let initialBalance = this.web3.eth.getBalance(this.web3.eth.coinbase);
     console.log('Balance:', this.web3.fromWei(initialBalance.toNumber()));
-    console.log('BALANCE CONTRACT:',this.checkBalances('0x05075fDE6AA5913E5AEd5A28688a33e53C75Eb3d'));
+    console.log('BALANCE CONTRACT:',this.checkBalances('0xb0453e5FDEa8d5A4b30d34d94D22682068fB48B0'));
     // this.createContract();
   }
 
@@ -67,12 +69,12 @@ export class LanguagePage {
     checkBalances(GZBAddress) {
       let GZBABI = [ { "constant": true, "inputs": [], "name": "name", "outputs": [ { "name": "", "type": "string", "value": "GAZPROMBANK" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "decimals", "outputs": [ { "name": "", "type": "uint8", "value": "8" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "", "type": "address" } ], "name": "balanceOf", "outputs": [ { "name": "", "type": "uint256", "value": "0" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "symbol", "outputs": [ { "name": "", "type": "string", "value": "GZB" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "_to", "type": "address" }, { "name": "_value", "type": "uint256" } ], "name": "transfer", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "inputs": [], "payable": false, "stateMutability": "nonpayable", "type": "constructor" } ];
       
-      let SmartGZBAddress = "0xEb1C8B51D677DB69319e15237c959B0603B74697"; // адрес контракта!!
+      let SmartGZBAddress = "0x2ebb1b1dc6bf970d5AF68485efCbB63d7a1b8EfB"; // адрес контракта!!
       let FXN = this.web3.eth.contract(GZBABI).at(SmartGZBAddress);
     
       //  var tokens = FXN.balanceOf(FXNAddress) / parseFloat(1e16);
       // var tokens = FXN.balanceOf(GZBAddress) / parseFloat(1e2);
-      let tokens = FXN.balanceOf('0x05075fDE6AA5913E5AEd5A28688a33e53C75Eb3d')/Math.pow(10,0);
+      let tokens = FXN.balanceOf(GZBAddress)/Math.pow(10,0);
       
     
         // return this.padTokens(tokens, 1);
@@ -80,38 +82,46 @@ export class LanguagePage {
     
     };
 
-//     createContract() {
-//       //компилирование контракта из файла
-//       const input = fs.readFileSync('../../assets/res/GZBToken.sol')
-//       const output = solc.compile(input.toString(), 1);
-//       const bytecode = output.contracts['GZBTOKEN'].bytecode;
-//       const abi = JSON.parse(output.contracts['GZBTOKEN'].interface);
+    createContract() {
+      //компилирование контракта из файла
+    //  const input = fs.readFileSync('../../assets/res/GZBToken.sol');
+/*
+      $.get( "../assets/res/GZBToken.sol", function( input ) {
+     //   console.log( data );
+          const output = solc.compile(input, 1).contracts[':GZBTOKEN'];
+      });
+*/
 
-//       // Contract object
-//       const contract = this.web3.eth.contract(abi);
 
-//       // Deploy contract instance
-// const contractInstance = contract.new({
-//     data: '0x' + bytecode,
-//     from: this.web3.eth.coinbase,
-//     gas: 90000*2
-//   }, (err, res) => {
-//   if (err) {
-//       console.log(err);
-//       return;
-//   }
+     // const output = solc.compile(input.toString(), 1);
+     // const bytecode = output.contracts['GZBTOKEN'].bytecode;
+     // const abi = JSON.parse(output.contracts['GZBTOKEN'].interface);
 
-//   // Log the tx, you can explore status with eth.getTransaction()
-//   console.log(res.transactionHash);
+      // Contract object
+     // const contract = this.web3.eth.contract(abi);
 
-//   // If we have an address property, the contract was deployed
-//   if (res.address) {
-//       console.log('Contract address: ' + res.address);
-//       // Let's test the deployed contract
-//       testContract(res.address);  //временно закоментил, т.к. не доделал
-//   }
-// });
+      // Deploy contract instance
+    //const contractInstance = contract.new({
+      //  data: '0x' + bytecode,
+        //from: this.web3.eth.coinbase,
+        //gas: 90000*2
+      //}, (err, res) => {
+        //  if (err) {
+          //console.log(err);
+          //return;
+        //}
 
+  // Log the tx, you can explore status with eth.getTransaction()
+      //console.log(res.transactionHash);
+
+  // If we have an address property, the contract was deployed
+      //if (res.address) {
+        //console.log('Contract address: ' + res.address);
+      // Let's test the deployed contract
+     // testContract(res.address);  //временно закоментил, т.к. не доделал
+      //}
+    //});
+  }
 // // Quick test the contract
 
 // function testContract(address) {
