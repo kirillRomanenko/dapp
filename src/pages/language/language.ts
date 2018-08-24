@@ -51,8 +51,8 @@ export class LanguagePage {
     console.log('account:', this.web3.eth.coinbase);
     let initialBalance = this.web3.eth.getBalance(this.web3.eth.coinbase);
     console.log('Balance:', this.web3.fromWei(initialBalance.toNumber()));
-    console.log('BALANCE CONTRACT:',this.checkBalances('0xEb1C8B51D677DB69319e15237c959B0603B74697'));
-    // this.createContract();
+    // console.log('BALANCE CONTRACT:',this.checkBalances('0xEb1C8B51D677DB69319e15237c959B0603B74697'));
+    this.createContract();
   }
 
 
@@ -82,113 +82,36 @@ export class LanguagePage {
     
     };
 
-    // createContract() {
-    //   //компилирование контракта из файла
-    //   const input = fs.readFileSync('../../assets/res/GZBToken.sol');
-    //   $.get( "../assets/res/GZBToken.sol", function( input ) {
-    //  //   console.log( data );
-    //       const output = solc.compile(input, 1).contracts[':GZBTOKEN'];
-    //       const bytecode = output.contracts['GZBTOKEN'].bytecode;
-    //       const abi = JSON.parse(output.contracts['GZBTOKEN'].interface);
-    //       // Contract object
-    //       const contract = this.web3.eth.contract(abi);
-    //       // Deploy contract instance
-    //       const contractInstance = contract.new({
-    //         data: '0x' + bytecode,
-    //         from: this.web3.eth.coinbase,
-    //         gas: 90000*2
-    //       }, (err, res) => {
-    //           if (err) {
-    //           console.log(err);
-    //           return;
-    //         }
+    createContract() {
+      //компилирование контракта из файла
+      let senderAddress = "0x5c15cDf44E4d3B361c6e42daAf6551166695F689";
+      let password = "123";
+      let fileName = "../assets/res/GZBToken.sol";
+      let contractName = "GZBTOKEN";
+      let deployContract = true;
+      // Unlock account.
+      this.web3.personal.unlockAccount(senderAddress, password);
+
+      // 1 Eth = 173 euro
+      let ethToFiatCurrency = 173;
+      let ethToFiatCurrencyBig = this.web3.toBigNumber(ethToFiatCurrency);
+      // Show account balance
+      let balanceWei = this.web3.eth.getBalance(senderAddress);
+      let balanceEther = this.web3.fromWei(balanceWei, "ether");
+
+      let balanceEtherBig = this.web3.toBigNumber(balanceEther);
+      let balanceInFiatCurrencyBig = balanceEtherBig.times(ethToFiatCurrencyBig);
+      $.get( fileName, function( input ) {
+        console.log('CONTRACT CODE:\n',input);
+        // let compileContract = solc.compile(input.toString(),1);
+        // let abi = compileContract.contracts['GZBToken.sol:GZBTOKEN'].interface;
+
+        
     
-    //   // Log the tx, you can explore status with eth.getTransaction()
-    //       //console.log(res.transactionHash);
-    
-    //   // If we have an address property, the contract was deployed
-    //       if (res.address) {
-    //         console.log('Contract address: ' + res.address);
-    //       // Let's test the deployed contract
-    //       testContract(res.address);  //временно закоментил, т.к. не доделал
-    //       }
-    //     });
-    //     function testContract(address) {
-    //       // Reference to the deployed contract
-    //      const token = contract.at(address);
-    //       // Destination account for test
-    //       const dest_account = '0x05075fDE6AA5913E5AEd5A28688a33e53C75Eb3d';
-       
-    //    //   // Assert initial account balance, should be 100000
-    //       const balance1 = token.balances.call(this.web3.eth.coinbase);
-    //       console.log(balance1 == 1000000);
-       
-    //    //   // Call the transfer function
-    //       token.transfer(dest_account, 100, {from: this.web3.eth.coinbase}, (err, res) => {
-    //          // Log transaction, in case you want to explore
-    //           console.log('tx: ' + res);
-    //           // Assert destination account balance, should be 100 
-    //          const balance2 = token.balances.call(dest_account);
-    //          console.log(balance2 == 100);
-    //       });
-    //     }
           
-    //   });
+      });
 
-
-
-      // const output = solc.compile(input, 1);
-      // const bytecode = output.contracts['GZBTOKEN'].bytecode;
-      // const abi = JSON.parse(output.contracts['GZBTOKEN'].interface);
-
-      // Contract object
-      // const contract = this.web3.eth.contract(abi);
-
-      // Deploy contract instance
-  //   const contractInstance = contract.new({
-  //       data: '0x' + bytecode,
-  //       from: this.web3.eth.coinbase,
-  //       gas: 90000*2
-  //     }, (err, res) => {
-  //         if (err) {
-  //         console.log(err);
-  //         return;
-  //       }
-
-  // // Log the tx, you can explore status with eth.getTransaction()
-  //     //console.log(res.transactionHash);
-
-  // // If we have an address property, the contract was deployed
-  //     if (res.address) {
-  //       console.log('Contract address: ' + res.address);
-  //     // Let's test the deployed contract
-  //     testContract(res.address);  //временно закоментил, т.к. не доделал
-  //     }
-  //   });
-// // Quick test the contract
-
-//  function testContract(address) {
-//    // Reference to the deployed contract
-//   const token = contract.at(address);
-//    // Destination account for test
-//    const dest_account = '0x05075fDE6AA5913E5AEd5A28688a33e53C75Eb3d';
-
-// //   // Assert initial account balance, should be 100000
-//    const balance1 = token.balances.call(this.web3.eth.coinbase);
-//    console.log(balance1 == 1000000);
-
-// //   // Call the transfer function
-//    token.transfer(dest_account, 100, {from: this.web3.eth.coinbase}, (err, res) => {
-//       // Log transaction, in case you want to explore
-//        console.log('tx: ' + res);
-//        // Assert destination account balance, should be 100 
-//       const balance2 = token.balances.call(dest_account);
-//       console.log(balance2 == 100);
-//    });
-//  }
-
-
-    //  } //create contract method end
+     } //create contract method end
     
   refreshPageLanguage() {
     this.events.subscribe('reloadLanguage',() => {
@@ -207,3 +130,5 @@ export class LanguagePage {
   }
 
 }
+
+
