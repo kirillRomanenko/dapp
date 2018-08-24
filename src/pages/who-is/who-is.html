@@ -6,13 +6,32 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>who-is</ion-title>
-  </ion-navbar>
+  
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+    <ion-grid>
+        <div class="pic">
+          <img src="assets/imgs/vhod.png" alt="">
+        </div>
+        <div class="caption">
+          <label for="" text-align="center">Кто вы?</label>
+        </div>
+        <ion-row>
+          <ion-col class="col-xs-1 col-xs-offset-2">
+            <p><input name="whois" type="radio" value="ТСП">ТСП</p>
+          </ion-col>
+          <ion-col class="col-xs-1 col-xs-offset-2">
+            <p><input name="whois" type="radio" value="ТСП">Клиент</p>
+          </ion-col>
+        </ion-row>
+        <ion-row class="header-field">
+           <ion-col class="col-xs-1 button">
+              <input class="button" type="button" value="Далее">
+           </ion-col>
+       </ion-row>
+      </ion-grid>
 
 </ion-content>
