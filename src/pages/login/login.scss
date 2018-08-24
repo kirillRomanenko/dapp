@@ -1,18 +1,12 @@
 page-login {
-    .header-field {
-        position: fixed;
-        top: 20px;
-        width: 100%;
-        height: 45%;
-        //background-color: #0A0B1F;
-        border-bottom-left-radius: 13em 2em;
-        border-bottom-right-radius: 13em 2em;
-    }
+    // .header-field {
+       
+    // }
     .caption{
         position: relative;
         width: 100%;
         font-size: 20px;
-        margin-top: 50%;
+        margin-top: 10%;
         font-family: 'Myriad Pro';
         text-align: center;
         font-stretch: ultra-expanded;
@@ -24,5 +18,23 @@ page-login {
         font-family: 'Myriad Pro';
         font-stretch: ultra-expanded;
         font-size: 20px;
+    }
+    .button{
+        display: flex;
+        flex:bottom;
+        margin: 0 auto;
+        margin-top:10%
+    }
+    .button_text{
+        display: flex;
+        flex: bottom;
+        margin: 0 auto;
+        margin-top:10%
+    }
+    img{
+        width: 70%;
+        height: 45%;
+        margin: 0 auto;
+        margin-left:15%;
     }
 }

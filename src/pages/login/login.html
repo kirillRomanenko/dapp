@@ -14,20 +14,22 @@
 
 
 <ion-content padding>
-  <div class="header-field">
+  <ion-grid no-padding>
+    <div class="pic">
+      <img src="assets/imgs/vhod.png" alt="">
+    </div>
     <div class="caption">
-        <label for="" align="center">Вход</label>
+      <label for="" align="center">Вход</label>
     </div>
-    <div class="input">
-      <h1>Login</h1>
-      <br>
-     <form action="#" method="post">
-      <input type="text" name="login">
-      <br>
-      <h1>Password</h1>
-      <br>
-      <input type="password" name="password">
-      </form>
-    </div>
-</div>
+    <ion-row class="header-field">
+       <ion-col class="col-xs-6 input">
+        <h1>Номер телефона</h1>
+          <form action="#" method="post">
+           <input class="button_text" type="number" name="namb">
+           <input class="button" type="button" value="Войти">
+           <input class="button" type="button" value="Регистрация">
+          </form>
+       </ion-col>
+   </ion-row>
+  </ion-grid>
 </ion-content>
