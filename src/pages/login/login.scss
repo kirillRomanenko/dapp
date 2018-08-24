@@ -1,3 +1,28 @@
 page-login {
-
+    .header-field {
+        position: fixed;
+        top: 20px;
+        width: 100%;
+        height: 45%;
+        //background-color: #0A0B1F;
+        border-bottom-left-radius: 13em 2em;
+        border-bottom-right-radius: 13em 2em;
+    }
+    .caption{
+        position: relative;
+        width: 100%;
+        font-size: 20px;
+        margin-top: 50%;
+        font-family: 'Myriad Pro';
+        text-align: center;
+        font-stretch: ultra-expanded;
+        //color: #ffffff;
+        //border-bottom: 3px ridge #FE4D02;
+    }
+    h1{
+        text-align: center;
+        font-family: 'Myriad Pro';
+        font-stretch: ultra-expanded;
+        font-size: 20px;
+    }
 }
