@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { SendPage } from '../send/send';
 
 /**
  * Generated class for the PinPage page.
@@ -21,5 +22,7 @@ export class PinPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad PinPage');
   }
-
+  openSend() {
+    this.navCtrl.push(SendPage);
+  }
 }
