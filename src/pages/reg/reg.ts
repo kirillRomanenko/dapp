@@ -14,12 +14,29 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'reg.html',
 })
 export class RegPage {
-
+  hideMeCompany=false;
+  hideMeClient=false;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegPage');
+  }
+  hideDisabledCompany(){
+    return this.hideMeCompany=false;
+  }
+  hideDisabledClient(){
+    return this.hideMeClient=false;
+  }
+
+  hideCompany(){
+    this.hideDisabledClient();
+    return this.hideMeCompany=true;
+  }
+  hideClient(){
+    this.hideDisabledCompany();
+    return this.hideMeClient=true;
   }
 
 }

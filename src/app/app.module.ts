@@ -20,7 +20,6 @@ import { Web3Provider } from '../providers/web3/web3';
 import { AnimationProvider } from '../providers/animation/animation';
 import { LanguageProvider } from '../providers/language/language';
 import { WhoIsPage } from '../pages/who-is/who-is';
-import { RegClientPage } from '../pages/reg-client/reg-client';
 import { TokensPage } from '../pages/tokens/tokens';
 import { DetailsPage } from '../pages/details/details';
 import { LkPage } from '../pages/lk/lk';
@@ -39,7 +38,6 @@ import { DeletePage } from '../pages/delete/delete';
     SendPage,
     TutorialPage,
     WhoIsPage,
-    RegClientPage,
     TokensPage,
     DetailsPage,
     LkPage,
@@ -63,7 +61,6 @@ import { DeletePage } from '../pages/delete/delete';
     SendPage,
     TutorialPage,
     WhoIsPage,
-    RegClientPage,
     TokensPage,
     DetailsPage,
     LkPage,
