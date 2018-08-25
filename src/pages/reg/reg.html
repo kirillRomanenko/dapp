@@ -28,12 +28,34 @@
           </ion-col>
         </ion-row>
         <ion-row>
-          <ion-col *ngIf="hideMeCompany">
-           <p>HELLO!!</p>
+          <ion-col *ngIf="hideMeCompany" >
+            <ion-list>
+                <ion-item class="col-xs-4 col-xs-offset-4">
+                    <ion-label color="primary" floating>Название</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                <ion-item class="col-xs-6 col-xs-offset-3">
+                    <ion-label color="primary" floating>Номер телефона</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                <ion-item class="col-xs-4 col-xs-offset-4">
+                    <ion-label color="primary" floating>ИНН</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+            </ion-list>
           </ion-col>
           <ion-col *ngIf="hideMeClient">
-              <p>By!!</p>
-             </ion-col>
+              <ion-list>
+                  <ion-item class="col-xs-4 col-xs-offset-4">
+                      <ion-label color="primary" floating>ФИО</ion-label>
+                      <ion-input></ion-input>
+                    </ion-item>
+                  <ion-item class="col-xs-6 col-xs-offset-3">
+                      <ion-label color="primary" floating>Номер телефона</ion-label>
+                      <ion-input></ion-input>
+                    </ion-item>
+              </ion-list>
+            </ion-col>
 
         </ion-row>
         
