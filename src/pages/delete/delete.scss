@@ -1,3 +1,47 @@
 page-delete {
-
+    .caption{
+        position: relative;
+        width: 100%;
+        font-size: 20px;
+        margin-top: 50%;
+        font-family: 'Myriad Pro';
+        text-align: center;
+        font-stretch: ultra-expanded;
+        //color: #ffffff;
+        //border-bottom: 3px ridge #FE4D02;
+    }
+    .input{
+        width: 100%;
+        margin-top: 30%;
+        font-family: 'Myriad Pro';
+        text-align: center;
+        font-stretch: ultra-expanded;
+        //color: #ffffff;
+        //border-bottom: 3px ridge #FE4D02;
+    }
+    h1{
+        text-align: center;
+        font-family: 'Myriad Pro';
+        font-stretch: ultra-expanded;
+        font-size: 20px;
+    }
+    .button{
+        display: flex;
+        flex:bottom;
+        margin: 0 auto;
+        margin-top:10%
+    }
+    .button_text{
+        display: flex;
+        flex: bottom;
+        margin-top:10%;
+        margin-left:30%;
+        border-bottom: 3px white;
+    }
+    img{
+        width: 70%;
+        height: 45%;
+        margin: 0 auto;
+        margin-left:15%;
+    }
 }

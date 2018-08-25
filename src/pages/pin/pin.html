@@ -14,5 +14,20 @@
 
 
 <ion-content padding>
-
+    <ion-grid no-padding>
+      <ion-row class="header-field">
+          <ion-col class="col-xs-6 input">
+           <h1>Введите код из смс</h1>
+             <form action="#" method="post">
+              <input class="button_text" type="number" name="namb"> 
+              <input class="button" type="button" value="Ввести">
+             </form>
+          </ion-col>
+      </ion-row>
+      <div>
+            <a href="#" (click)="openSend()">SKIP to "Send token"</a>
+            <br>
+            <a href="#" (click)="openDelete()">SKIP to "Delete token"</a>
+      </div>
+    </ion-grid>
 </ion-content>
