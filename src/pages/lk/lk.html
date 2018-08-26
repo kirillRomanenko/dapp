@@ -14,5 +14,21 @@
 
 
 <ion-content padding>
-
+  <ion-grid no-padding>
+    <div class="caption">
+      <label for="" align="center">Личный кабинет</label>
+    </div>
+    <ion-row class="header-field">
+       <ion-col class="col-xs-6 input">
+          <form action="#" method="post">
+           <input class="button" type="button" value="Создать токен" (click)="openCreateTokensPage()"> 
+           <input class="button" type="button" value="Отправить токен" (click)="openSend()">
+           <input class="button" type="button" value="Удалить токен" (click)="openDelete()">
+          </form>
+          <ion-col class="col-xs-6 exit">
+              <input class="button" type="button" value="Выйти" (click)="openLogin()">
+        </ion-col>
+       </ion-col>
+   </ion-row>
+  </ion-grid>
 </ion-content>

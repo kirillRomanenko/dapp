@@ -14,5 +14,31 @@
 
 
 <ion-content padding>
-
+    <ion-grid no-padding>
+        <ion-row class="header-field">
+            <ion-col class="col-xs-6 col-md-offset-1 input">
+               <form action="#" method="post">
+                <h1>Введите название токена</h1>
+                <input class="button_text" type="text" name="tok">  
+               </form>
+            </ion-col>
+            <ion-col class="col-xs-6 input">
+                <form action="#" method="post">
+                 <h1>Введите количество токенов</h1>
+                 <input class="button_text" type="namber" name="namb"> 
+                </form>
+          </ion-col>
+           <!-- <ion-col class="col-xs-6 btn">
+                  <input class="button" type="button" value="Создать">
+         </ion-col> -->
+        </ion-row>
+        <ion-row class="button">
+                <ion-col class="col-xs-6 btn">
+                  <input class="button" type="button" value="Создать">
+         </ion-col>
+        </ion-row>
+        <!-- <div class="button">
+            <input class="button" type="button" value="Создать">
+         </div> -->
+      </ion-grid>
 </ion-content>

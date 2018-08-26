@@ -1,3 +1,35 @@
 page-create-tokens {
-
+    
+    .input{
+        position: relative;
+        width: 100%;
+        margin-top: 30%;
+        text-align: center;
+        font-stretch: ultra-expanded;
+        // color: #ffffff;
+        // border-bottom: 3px ridge #FE4D02;
+    }
+       h1{
+        text-align: center;
+        font-family: 'Myriad Pro';
+        font-stretch: ultra-expanded;
+        font-size: 20px;
+    }
+    .button{
+        // position: fixed;
+        // display: flex;
+        // flex:bottom;
+        margin: 0 auto;
+        margin-top:50%;
+    }
+    .button_text{
+        display: flex;
+        flex: bottom;
+        margin: 0 auto;
+        margin-top:10%;
+        background: white;
+    }
+    .btn{
+        // background: black;
+    }
 }
