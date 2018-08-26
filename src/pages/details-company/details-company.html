@@ -13,6 +13,30 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+    <ion-row>
+        <ion-col class="col-xs-1 col-xs-offset-2 buttons buttonBalance">
+          <button (click)="hideBalance()">Счет</button>
+        </ion-col>
+        <ion-col class="col-xs-1 col-xs-offset-2 buttons buttonSendTokens">
+            <button (click)="hideSendTokens()">Отправка токенов</button>
+        </ion-col>
+      </ion-row>
+    <ion-row>
+        <ion-col *ngIf="hideBalanceFlag">
+          <ion-list>
+              <ion-item class="col-xs-4 col-xs-offset-4">
+                  <p>Токены</p>
+                </ion-item>
+          </ion-list>
+        </ion-col>
+        <ion-col *ngIf="hideSendFlag">
+            <ion-list>
+                <ion-item class="col-xs-4 col-xs-offset-4">
+                    <p>ID клиента</p>
+                  </ion-item>
+            </ion-list>
+          </ion-col>
+      </ion-row>
 
 </ion-content>

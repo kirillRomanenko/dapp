@@ -15,11 +15,32 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class DetailsCompanyPage {
 
+  hideBalanceFlag = false;
+  hideSendFlag = false;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailsCompanyPage');
   }
+
+  hideDissableBalance() {
+    return this.hideBalanceFlag = false;
+  }
+
+  hideDissableSend() {
+    return this.hideSendFlag = false;
+  }
+
+  hideBalance() {
+    this.hideDissableSend();
+    return this.hideBalanceFlag = true;
+  }
+
+  hideSendTokens() {
+    this.hideDissableBalance();
+    return this.hideSendFlag = true;
+  } 
 
 }
