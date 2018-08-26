@@ -14,12 +14,33 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'details.html',
 })
 export class DetailsPage {
+  
+  hideAccountFlag = false;
+  hideDiscountsFlag = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailsPage');
+  }
+
+  hideDisabledAccount() {
+    return this.hideAccountFlag = false;
+  }
+
+  hideDisabledDiscounts() {
+    return this.hideDiscountsFlag = false;
+  }
+
+  hideAccount() {
+    this.hideDisabledDiscounts();
+    return this.hideAccountFlag = true;
+  }
+
+  hideDiscounts() {
+    this.hideDisabledAccount();
+    return this.hideDiscountsFlag = true;
   }
 
 }

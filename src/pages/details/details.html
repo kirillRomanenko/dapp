@@ -6,13 +6,37 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>details</ion-title>
-  </ion-navbar>
+  <!-- <ion-navbar>
+      <button ion-button>Назад</button>
+  </ion-navbar> -->
 
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+  
+    <ion-row>
+        <ion-col class="col-xs-1 col-xs-offset-2 buttons buttonAccount">
+          <button (click)="hideAccount()">Баллы</button>
+        </ion-col>
+        <ion-col class="col-xs-1 col-xs-offset-2 buttons buttonDiscount">
+            <button (click)="hideDiscounts()">Скидки</button>
+        </ion-col>
+      </ion-row>
+    <ion-row>
+        <ion-col *ngIf="hideAccountFlag">
+          <ion-list>
+              <ion-item class="col-xs-4 col-xs-offset-4">
+                  <p>Баллы</p>
+                </ion-item>
+          </ion-list>
+        </ion-col>
+        <ion-col *ngIf="hideDiscountsFlag">
+            <ion-list>
+                <ion-item class="col-xs-4 col-xs-offset-4">
+                    <p>Скидки</p>
+                  </ion-item>
+            </ion-list>
+          </ion-col>
+      </ion-row>
 </ion-content>
