@@ -25,6 +25,7 @@ import { DetailsPage } from '../pages/details/details';
 import { LkPage } from '../pages/lk/lk';
 import { CreateTokensPage } from '../pages/create-tokens/create-tokens';
 import { DeletePage } from '../pages/delete/delete';
+import { DetailsCompanyPage } from '../pages/details-company/details-company';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { DeletePage } from '../pages/delete/delete';
     DetailsPage,
     LkPage,
     CreateTokensPage,
-    DeletePage
+    DeletePage,
+    DetailsCompanyPage
   ],
   imports: [
     BrowserModule,
@@ -65,7 +67,8 @@ import { DeletePage } from '../pages/delete/delete';
     DetailsPage,
     LkPage,
     CreateTokensPage,
-    DeletePage
+    DeletePage,
+    DetailsCompanyPage
   ],
   providers: [
     StatusBar,
