@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { SendPage } from '../send/send';
 
 /**
  * Generated class for the DetailsCompanyPage page.
@@ -43,4 +44,7 @@ export class DetailsCompanyPage {
     return this.hideSendFlag = true;
   } 
 
+  openSendTokens() {
+    this.navCtrl.push(SendPage);
+  }
 }

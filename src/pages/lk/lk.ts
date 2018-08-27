@@ -4,6 +4,8 @@ import { LoginPage } from '../login/login';
 import { DeletePage } from '../delete/delete';
 import { SendPage } from '../send/send';
 import { CreateTokensPage } from '../create-tokens/create-tokens';
+import { DetailsPage } from '../details/details';
+import { DetailsCompanyPage } from '../details-company/details-company';
 
 /**
  * Generated class for the LkPage page.
@@ -36,5 +38,11 @@ export class LkPage {
   }
   openSend() {
     this.navCtrl.push(SendPage);
+  }
+  openDetailsPage(){
+    this.navCtrl.push(DetailsPage);
+  }
+  openDetailsCompanyPage(){
+    this.navCtrl.push(DetailsCompanyPage);
   }
 }

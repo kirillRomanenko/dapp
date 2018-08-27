@@ -10,5 +10,14 @@ page-details-company {
     .buttonBalance  {
         margin-left: 20%;
     }
-
+    button{
+        display: flex;
+        flex:bottom;
+        margin: 0 auto;
+        margin-top:20%;
+        font-size: 20px;
+        font-family: 'Myriad Pro';
+        text-align: center;
+        font-stretch: ultra-expanded;
+    }
 }
