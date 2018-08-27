@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SendPage } from '../send/send';
 import { DeletePage } from '../delete/delete';
 import { LkPage } from '../lk/lk';
+import { TokensPage } from '../tokens/tokens';
 
 /**
  * Generated class for the PinPage page.
@@ -33,4 +34,9 @@ export class PinPage {
   openDelete() {
     this.navCtrl.push(DeletePage);
   }
+
+  openLK_klient(){
+    this.navCtrl.push(TokensPage);
+  }
+  
 }

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { LoginPage } from '../login/login';
+import { DetailsPage } from '../details/details';
 
 /**
  * Generated class for the TokensPage page.
@@ -22,4 +24,11 @@ export class TokensPage {
     console.log('ionViewDidLoad TokensPage');
   }
 
+  openDetailsPage(){
+    this.navCtrl.push(DetailsPage);
+  }
+  
+  openLogin(){
+    this.navCtrl.push(LoginPage);
+  }
 }
